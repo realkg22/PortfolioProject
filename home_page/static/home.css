@@ -1,0 +1,102 @@
+.bg-1 {
+    background-image: linear-gradient(#95d9f0, white);
+    color: #ffffff;
+}
+
+.container-fluid {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+body {
+    font: 16px "Montserrat", sans-serif;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+}
+
+h1{
+    font: 36px "Montserrat", sans-serif;
+    font-weight: bolder;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.coding-style{
+    font-family: 'Fira Code', monospace;
+    font-size: 40px;
+    text-decoration: underline;
+    color: black;
+}
+
+.typing > *{
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typingAnim 3s steps(50);
+  }
+
+.typing > *::after{
+    content: ". .";
+    display: block;
+    position: absolute;
+    top: 1em;
+    left: .35em;
+}
+
+.typing > *::before{
+    content: "";
+    position: absolute;
+    display: block;
+    top: 2.1em;
+    left: .25em;
+    width: 1em;
+    height: .1em;
+    border-radius: 100%;
+    background: #fff;
+    animation: typingSpeak .5s steps(2);
+    animation-iteration-count: 5;
+  }
+
+@keyframes typingAnim{
+    from { width: 0 }
+    to { width: 100% }
+  }
+@keyframes typingSpeak{
+    0% { width: 1em; height: .1em }
+    100% { width: 1em; height: .5em; }
+}
+
+.intro-hi{
+    font-size: 35px;
+    color: black;
+}
+
+.profile-pic{
+    border-radius: 200px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 5px solid #ffffff;
+    margin-bottom: 10px;
+}
+
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card-title{
+    font: 16px "Montserrat", sans-serif;
+    font-weight: bold;
+}

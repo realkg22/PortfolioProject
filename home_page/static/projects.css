@@ -1,0 +1,9 @@
+body {
+    font: 16px "Montserrat", sans-serif;    
+}
+
+.card-img-top {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+}

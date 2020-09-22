@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+<head>
+    <meta charset="utf-8">
+</head>
+
+<div class="w3-content" style="max-width:1600px"></div>
+    <body>
+        <div class="container-fluid w3-panel bg-1 w3-center">
+            <img src="{{ owner.image.url }}" class="w3- profile-pic" height="350" width="275" style="vertical-align:middle">
+            <div>
+                <p class="intro-hi"><b>Hi! I'm {{ owner.name }}</b></p>
+                <p style="font-size:20px; margin-top: -10px; color: black;">and I'm a</p>
+                <div class="container typing" style="margin-top: -5px">
+                    <p class="coding-style"><u>Software Engineer</u></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h1><b> Education</b></h1>
+            <div style="overflow: hidden;">
+                <p style="float: left;"><b>{{ education.name }}</b></p>
+                <p style="float: right;"><i class="fa fa-calendar" style="font-size:20px;color:#95d9f0"></i>    {{ education.dateStarted|date:'F Y' }} - {{ education.dateEnded|date:'F Y' }}</p>
+            </div>
+            <p>{{ education.description }}</p>
+
+            <h1><b>Programming Languages</b></h1>
+            <div class="row">
+                {% for skill in skills %}
+                    <div class="card align-items-center">
+                        <img class="card-img-top" src="{{ skill.image.url }}">
+                        <h5 class="card-title">{{ skill.name }}</h5>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <h1><b>Application Skills</b></h1>
+            <div class="row">
+                {% for application in programming_applications %}
+                    <div class="card align-items-center">
+                        <img class="card-img-top" src="{{ application.image.url }}" width="200px" height="200px">
+                        <h5 class="card-title">{{ application.name }}</h5>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <h1><b>Work Experiences</b></h1>
+            <div class="row">
+                {% for experience in work_experiences %}
+                    <div class="col-md-4">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="{{ experience.image.url }}" height="200" width="250">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ experience.name }}</h5>
+                                <a href="{% url 'experience_detail' experience.pk %}"" class="btn btn-primary">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </body>
+</div>
+{% endblock %}

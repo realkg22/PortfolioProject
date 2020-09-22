@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<div class="container">
+    <h1>{{ project.title }}</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{{ experience.image.url }}" alt="">
+        </div>
+        <div class="col-md-4">
+            <h5>About my experience:</h5>
+            <p>{{ experience.description }}</p>
+            <br>
+            <h5>Applications and Skills used:</h5>
+            <p>{{ experience.skillsUsed }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
