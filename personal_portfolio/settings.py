@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '21w1a@zzn&kl%d8*0b*t=sr*k+z1%_ry)ave*ef_y1-ojoypzs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['178.128.186.88']
 
@@ -87,7 +87,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'projectportfolio',
-            'USER': 'kyle',
+            'USER': 'kyull',
             'PASSWORD': 'tamakyle22',
             'HOST': 'localhost',
             'PORT': '',
@@ -132,7 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'personal_portfolio/media')
